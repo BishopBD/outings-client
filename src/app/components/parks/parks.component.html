@@ -1,1 +1,14 @@
-<p>parks works!</p>
+<p>Number of Parks: {{ (model$ | async)?.numberOfParks }}</p>
+
+<div class="card"
+     *ngFor="let park of (model$ | async)?.list">
+  <div class="card-header">
+    {{ park.name }}
+  </div>
+  <div class="card-body">
+    <p> {{ park.name }} has {{park.acreage }}</p>
+    <div>
+      {{ park.notes }}
+    </div>
+  </div>
+</div>

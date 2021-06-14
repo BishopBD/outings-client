@@ -10,6 +10,8 @@ import { FourOhFourComponent } from './components/four-oh-four/four-oh-four.comp
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ParkListComponent } from './components/parks/park-list/park-list.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     NavComponent,
     HomeComponent,
     ParksComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    ParkListComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
-    /** This is for the developer tools. */
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

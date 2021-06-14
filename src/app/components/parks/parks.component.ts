@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState, selectParksComponentViewModel } from 'src/app/reducers';
-import { ParkViewModel } from 'src/app/view-models/parks';
+import { ParkViewModel, ParkViewModelListItem } from 'src/app/view-models/parks';
 
 @Component({
   selector: 'app-parks',
@@ -11,12 +12,16 @@ import { ParkViewModel } from 'src/app/view-models/parks';
 })
 export class ParksComponent implements OnInit {
 
-  model$!: Observable<ParkViewModel>;
+
+  parkList$!: Observable<ParkViewModel>;
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.model$ = this.store.select(selectParksComponentViewModel);
+    this.parkList$ = this.store.select(selectParksComponentViewModel);
+
   }
+
+
 
 }

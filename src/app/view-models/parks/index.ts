@@ -9,3 +9,9 @@ export interface ParkViewModelListItem {
   acreage: string;
   notes: string;
 }
+
+export interface ParkCreate {
+  name: string;
+  acreage?: string;
+  notes?: string;
+}

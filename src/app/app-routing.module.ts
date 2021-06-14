@@ -12,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'parks',
-    component: ParksComponent
+    component: ParksComponent,
+
   },
   {
     path: '**',
